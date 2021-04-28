@@ -1,0 +1,12 @@
+{
+  "name": "LuauRegExpTestModel",
+  "tree": {
+    "$className": "Folder",
+    "Packages": {
+      "$path": "Packages",
+      "RegExp": {
+        "$path": "src"
+      }
+    }
+  }
+}
