@@ -11,5 +11,3 @@ echo "Run static analysis"
 roblox-cli analyze test-model.project.json
 echo "Run tests"
 roblox-cli run --load.model model.rbxmx --run bin/spec.lua
-
-
