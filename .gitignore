@@ -1,4 +1,5 @@
-Packages/
-!Packages/_Index/.robloxrc
+Packages/*
+!Packages/.robloxrc
+
 rotriever.lock
 *.rbxmx
