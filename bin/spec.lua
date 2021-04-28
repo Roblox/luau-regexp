@@ -8,7 +8,7 @@ local JestRoblox = require(Root.Packages.Dev.JestRoblox)
 -- Run all tests, collect results, and report to stdout.
 local result = JestRoblox.TestBootstrap:run(
 	{ Packages.RegExp },
-	JestRoblox.Reporters.TextReporter
+	JestRoblox.Reporters.TextReporterQuiet
 )
 
 if result.failureCount == 0 and #result.errors == 0 then
