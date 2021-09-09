@@ -1,8 +1,9 @@
 [package]
 name = "RegExp"
-version = "0.1.0"
+version = "0.1.1"
 author = "Lua Foundation"
 content_root = "src"
+files = ["*", "!**/__tests__/**"]
 
 [dev_dependencies]
 JestRoblox = "github.com/roblox/jest-roblox@0.7.1"
