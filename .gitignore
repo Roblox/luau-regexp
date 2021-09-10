@@ -1,5 +1,6 @@
 Packages/*
 !Packages/.robloxrc
-
+# let selene auto-generate latest
+roblox.toml
 rotriever.lock
 *.rbxmx

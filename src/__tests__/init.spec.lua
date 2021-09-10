@@ -5,8 +5,8 @@ return function()
 	local Packages = RegExpModule.Parent
 	local LuauPolyfill = require(Packages.Dev.LuauPolyfill)
 	local instanceof = LuauPolyfill.instanceof
-	local JestRoblox = require(Packages.Dev.JestRoblox)
-	local jestExpect = JestRoblox.Globals.expect
+	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local jestExpect = JestGlobals.expect
 
 	describe("ignoreCase", function()
 		it("has a `ignoreCase` property set to true if the `i` flag is used", function()
@@ -55,5 +55,4 @@ return function()
 			jestExpect(instanceof(RegExp("test"), RegExp)).toEqual(true)
 		end)
 	end)
-
 end
