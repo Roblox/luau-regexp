@@ -1,10 +1,11 @@
 [package]
 name = "RegExp"
-version = "0.1.1"
+version = "0.1.2"
 author = "Lua Foundation"
 content_root = "src"
 files = ["*", "!**/__tests__/**"]
 
 [dev_dependencies]
-JestRoblox = "github.com/roblox/jest-roblox@0.7.1"
-LuauPolyfill = "github.com/roblox/luau-polyfill@0.1.5"
+JestGlobals = "github.com/roblox/jest-roblox@2.0.1"
+TestEZ = "github.com/roblox/jest-roblox@2.0.1"
+LuauPolyfill = "github.com/roblox/luau-polyfill@0.2.1"

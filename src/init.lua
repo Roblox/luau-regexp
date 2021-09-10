@@ -1,14 +1,22 @@
 local RegEx = require(script.RegEx)
+type Array<T> = { [number]: T }
+
+type RegExpExecArray = Array<string> & { index: number?, input: string?, n: number }
+
+export type RegExp = {
+	exec: (self: RegExp, input: string) -> RegExpExecArray | nil,
+	test: (self: RegExp, input: string) -> boolean,
+}
 
 local RegExp = {}
 local RegExpMetatable = {
 	__index = RegExp,
 	__tostring = function(self)
 		return tostring(self._innerRegEx)
-	end
+	end,
 }
 
-function RegExp:exec(str: string)
+function RegExp:exec(str: string): RegExpExecArray | nil
 	local match = self._innerRegEx:match(str)
 	if not match then
 		return nil
@@ -31,14 +39,14 @@ function RegExp:test(str: string): boolean
 	return self:exec(str) ~= nil
 end
 
-local function new(_self, source, flags)
+local function new(_self, pattern: RegExp | string, flags: string?)
 	flags = flags or ""
-	local innerRegEx = RegEx.new(source, flags)
+	local innerRegEx = RegEx.new(pattern, flags)
 	local object = {
-		source = source,
-		ignoreCase = flags:find("i") ~= nil,
-		global = flags:find("g") ~= nil,
-		multiline = flags:find("m") ~= nil,
+		source = pattern,
+		ignoreCase = (flags :: string):find("i") ~= nil,
+		global = (flags :: string):find("g") ~= nil,
+		multiline = (flags :: string):find("m") ~= nil,
 		_innerRegEx = innerRegEx,
 	}
 
