@@ -1,6 +1,6 @@
 # Luau RegExp Changelog
 
-## Unreleased
+## 0.2.0
 
 - Remove unicode support to minimize package size. The existing source files to support unicode were large enough to impact time to parse, time to require and total package size ([#4](https://github.com/Roblox/luau-regexp/pull/4))
 
