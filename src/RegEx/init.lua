@@ -42,7 +42,7 @@ local options = {
 	-- - You try to compile a RegEx with unicode flag
 	-- - You try to use the \p pattern
 	-- The default is true
-	unicodeData = true,
+	unicodeData = false,
 };
 
 --
