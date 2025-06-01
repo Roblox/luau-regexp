@@ -91,7 +91,7 @@ end;
 
 --
 local flag_map = {
-	a = 'anchored', i = 'caseless', m = 'multiline', s = 'dotall', u = 'unicode', U = 'ungreedy', x ='extended',
+	a = 'anchored', i = 'ignoreCase', m = 'multiline', s = 'dotall', u = 'unicode', U = 'ungreedy', x ='extended',
 };
 
 local posix_class_names = {
@@ -1959,7 +1959,7 @@ function re.new(...)
 	end;
 
 	local flags = {
-		anchored = false, caseless = false, multiline = false, dotall = false, unicode = false, ungreedy = false, extended = false,
+		anchored = false, ignoreCase = false, multiline = false, dotall = false, unicode = false, ungreedy = false, extended = false,
 	};
 	local flag_repr = { };
 	for f in string.gmatch(flags_str or '', utf8.charpattern) do
@@ -2005,7 +2005,7 @@ function re.fromstring(...)
 	until escape_count % 2 == 1;
 
 	local flags = {
-		anchored = false, caseless = false, multiline = false, dotall = false, unicode = false, ungreedy = false, extended = false,
+		anchored = false, ignoreCase = false, multiline = false, dotall = false, unicode = false, ungreedy = false, extended = false,
 	};
 	local flag_repr = { };
 	while str_arr.n > i0 do
