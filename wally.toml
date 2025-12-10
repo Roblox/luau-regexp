@@ -1,0 +1,13 @@
+[package]
+name = "roblox/regexp"
+version = "0.2.2"
+license = "MIT"
+authors = ["Roblox <no-reply@roblox.com>"]
+
+realm = "shared"
+registry = "https://github.com/UpliftGames/wally-index"
+repository = "https://github.com/Roblox/luau-regexp"
+
+exclude = ["**/__tests__/**"]
+
+[dependencies]
