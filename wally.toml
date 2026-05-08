@@ -1,5 +1,6 @@
 [package]
 name = "roblox/regexp"
+description = "A regular expression library for Luau."
 version = "0.2.2"
 license = "MIT"
 authors = ["Roblox <no-reply@roblox.com>"]
