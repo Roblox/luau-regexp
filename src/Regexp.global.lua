@@ -4,8 +4,9 @@ type Array<T> = { [number]: T }
 type RegExpExecArray = Array<string> & { index: number?, input: string?, n: number }
 
 export type RegExp = {
-    exec: (self: RegExp, input: string) -> RegExpExecArray | nil,
-    test: (self: RegExp, input: string) -> boolean,
+	exec: (self: RegExp, input: string) -> RegExpExecArray | nil,
+	execAll: (self: RegExp, input: string) -> {RegExpExecArray},
+	test: (self: RegExp, input: string) -> boolean,
 }
 
 local RegExp = {}
@@ -33,6 +34,31 @@ function RegExp:exec(str: string): RegExpExecArray | nil
     matches.index = index
     matches.input = str
     return matches
+end
+
+function RegExp:execAll(str: string): {RegExpExecArray}
+	local matchFunction = self._innerRegEx:matchall(str)
+	local finds = {}
+	
+	while task.wait() do
+		local match = matchFunction()
+		if not match then
+			break
+		end
+		
+		local index = match:span()
+		local groups = match:grouparr()
+
+		local matches = { groups[0] }
+		for i = 1, groups.n do
+			matches[i + 1] = groups[i]
+		end
+		matches.n = groups.n + 1
+		matches.index = index
+		matches.input = str
+		table.insert(finds, matches)
+	end
+	return finds
 end
 
 function RegExp:test(str: string): boolean
