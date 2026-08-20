@@ -1,4 +1,7 @@
 # Luau RegExp Changelog
+## 0.3.0
+
+- Disable unicode support in the source code as well as removing references to requires scripts that don't exist in this repository.
 
 ## 0.2.0
 

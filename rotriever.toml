@@ -1,6 +1,6 @@
 [package]
 name = "RegExp"
-version = "0.2.2"
+version = "0.3.0"
 authors = ["#luau"]
 description = "A regular expression library for Luau."
 repository = "https://github.com/roblox/luau-regexp-internal"
