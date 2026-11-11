@@ -9,6 +9,6 @@ realm = "shared"
 registry = "https://github.com/UpliftGames/wally-index"
 repository = "https://github.com/Roblox/luau-regexp"
 
-exclude = ["**/__tests__/**"]
+exclude = ["**/__tests__/**", "pkg.luau", "pkg.lock.luau"]
 
 [dependencies]
